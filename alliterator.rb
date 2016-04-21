@@ -1,5 +1,5 @@
 require "sinatra"
 
 get "/" do
-  "Alliterator"
+  erb :index
 end
