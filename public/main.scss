@@ -7,61 +7,136 @@ $red: #7F5959;
 $light_red: #B27D7D;
 
 body {
-  margin: 250px auto;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  background: $gray;
   font-family: helvetica, sans-serif;
+  position: relative;
+  top: 0;
+}
+
+.alliterator {
+  padding: 250px 0 400px;
+  height: 150%;
+  background: $gray;
   font-size: $font-size;
   overflow: hidden;
+
+  a {
+    color: $red;
+    text-decoration: none;
+    display: block;
+    padding: 0px;
+    opacity: 1;
+    transition: height 1s ease 1s, opacity 1s ease 2s;
+    // transition: opacity 1s ease 2s;
+    // transition: height 1s ease 1s;
+    height: 150px;
+
+    &:hover {
+      color: $light_red;
+    }
+
+    &.hidden {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  input {
+    background: $gray;
+    font-size: $font-size;
+    border: none;
+    border-bottom: 1px solid $light_gray;
+    display: inline-block;
+    height: 150px;
+    color: $white;
+    outline: none;
+    padding: 0;
+    transition: all 1s ease;
+    display: inline-block;
+
+    &.hidden {
+      height: 0;
+    }
+  }
+
+  p {
+    color: $light_gray;
+    opacity: 1;
+    transition: all 1s ease .5s;
+    margin: 0;
+    text-transform: capitalize;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
 }
 
-a {
-  color: $red;
-  text-decoration: none;
-  display: block;
-  padding: 0px;
-  opacity: 1;
-  transition: height 1s ease 1s, opacity 1s ease 2s;
-  // transition: opacity 1s ease 2s;
-  // transition: height 1s ease 1s;
-  height: 150px;
+section {
+  padding: 300px 100px;
+  position: relative;
+  font-size: 92px;
 
-  &:hover {
-    color: $light_red;
+  a {
+    text-decoration: none;
+    display: inline-block;
+    transition: all 1s ease;
+
+    &.arrow {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
   }
+
+  &:nth-child(odd) {
+    background-color: $white;
+    a { 
+      color: $light_red;
+
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: $gray;
+    a { 
+      color: $white;
+
+      &:hover {
+        color: $light_gray;
+      }
+    }
+  }
+}
+
+.wrapper {
+  transition: all .5s ease;
+  opacity: 1;
+  top: 0;
+  position: relative;
 
   &.hidden {
     opacity: 0;
-    height: 0;
+    top: -20px;
   }
-}
 
-input {
-  background: $gray;
-  font-size: $font-size;
-  border: none;
-  border-bottom: 1px solid $light_gray;
-  display: inline-block;
-  height: 150px;
-  color: $white;
-  outline: none;
-  padding: 0;
-  transition: all 1s;
-  display: inline-block;
+  // &.from-left {
+  //   position: absolute;
+  //   left: auto;
 
-  &.hidden {
-    height: 0;
-  }
-}
-
-p {
-  color: $light_gray;
-  opacity: 1;
-  transition: all 1s ease .5s;
-  margin: 0;
-  text-transform: capitalize;
-
-  &.hidden {
-    opacity: 0;
-  }
+  //   &.hidden {
+  //     left: auto;
+  //   }
+  // }
 }

@@ -1,45 +1,87 @@
 body {
-  margin: 250px auto;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  background: #333333;
   font-family: helvetica, sans-serif;
+  position: relative;
+  top: 0; }
+
+.alliterator {
+  padding: 250px 0 400px;
+  height: 150%;
+  background: #333333;
   font-size: 60px;
   overflow: hidden; }
+  .alliterator a {
+    color: #7f5959;
+    text-decoration: none;
+    display: block;
+    padding: 0px;
+    opacity: 1;
+    transition: height 1s ease 1s, opacity 1s ease 2s;
+    height: 150px; }
+    .alliterator a:hover {
+      color: #b27d7d; }
+    .alliterator a.hidden {
+      opacity: 0;
+      height: 0; }
+  .alliterator input {
+    background: #333333;
+    font-size: 60px;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    display: inline-block;
+    height: 150px;
+    color: white;
+    outline: none;
+    padding: 0;
+    transition: all 1s ease;
+    display: inline-block; }
+    .alliterator input.hidden {
+      height: 0; }
+  .alliterator p {
+    color: #cccccc;
+    opacity: 1;
+    transition: all 1s ease .5s;
+    margin: 0;
+    text-transform: capitalize; }
+    .alliterator p.hidden {
+      opacity: 0; }
 
-a {
-  color: #7f5959;
-  text-decoration: none;
-  display: block;
-  padding: 0px;
+section {
+  padding: 300px 100px;
+  position: relative;
+  font-size: 92px; }
+  section a {
+    text-decoration: none;
+    display: inline-block;
+    transition: all 1s ease; }
+    section a.arrow {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 1; }
+      section a.arrow.hidden {
+        opacity: 0; }
+  section:nth-child(odd) {
+    background-color: white; }
+    section:nth-child(odd) a {
+      color: #b27d7d; }
+      section:nth-child(odd) a:hover {
+        color: #7f5959; }
+  section:nth-child(even) {
+    background-color: #333333; }
+    section:nth-child(even) a {
+      color: white; }
+      section:nth-child(even) a:hover {
+        color: #cccccc; }
+
+.wrapper {
+  transition: all .5s ease;
   opacity: 1;
-  transition: height 1s ease 1s, opacity 1s ease 2s;
-  height: 150px; }
-  a:hover {
-    color: #b27d7d; }
-  a.hidden {
+  top: 0;
+  position: relative; }
+  .wrapper.hidden {
     opacity: 0;
-    height: 0; }
-
-input {
-  background: #333333;
-  font-size: 60px;
-  border: none;
-  border-bottom: 1px solid #cccccc;
-  display: inline-block;
-  height: 150px;
-  color: white;
-  outline: none;
-  padding: 0;
-  transition: all 1s;
-  display: inline-block; }
-  input.hidden {
-    height: 0; }
-
-p {
-  color: #cccccc;
-  opacity: 1;
-  transition: all 1s ease .5s;
-  margin: 0;
-  text-transform: capitalize; }
-  p.hidden {
-    opacity: 0; }
+    top: -20px; }

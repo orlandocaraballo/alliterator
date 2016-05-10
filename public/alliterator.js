@@ -2,8 +2,8 @@ function Alliterator() {
   this.names = {
     "a": "andy",
     "b": "barry",
-    "c": "candace",
-    "d": "danny",
+    "c": "conny",
+    "d": "daniel",
     "e": "eddie",
     "f": "frank",
     "g": "gary",
