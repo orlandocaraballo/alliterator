@@ -1,10 +1,10 @@
-$font-size: 60px;
 $gray: #333;
 $light_gray: #ccc;
 $white: #fff;
 $light_green: #BEFFD8;
 $red: #7F5959;
 $light_red: #B27D7D;
+$alliterator_font_size: 8vw;
 
 body {
   margin: 0;
@@ -13,14 +13,37 @@ body {
   font-family: helvetica, sans-serif;
   position: relative;
   top: 0;
+
+  &.final {
+    overflow: hidden;
+
+    a {
+      pointer-events: none;
+      font-size: 12vw;
+    }
+
+    .background {
+      opacity: .5;
+      top: 0;
+    }
+  }
 }
 
 .alliterator {
-  padding: 250px 0 400px;
-  height: 150%;
+  // padding: 250px 0 400px;
+  // height: 150%;
+  height: 100vh;
   background: $gray;
-  font-size: $font-size;
+  font-size: $alliterator_font_size;
   overflow: hidden;
+  position: relative;
+
+  .wrapper {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+  }
 
   a {
     color: $red;
@@ -28,10 +51,15 @@ body {
     display: block;
     padding: 0px;
     opacity: 1;
-    transition: height 1s ease 1s, opacity 1s ease 2s;
-    // transition: opacity 1s ease 2s;
-    // transition: height 1s ease 1s;
-    height: 150px;
+    transition: all .5s ease .5s;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: 15vw;
+    width: 75vw;
+    text-align: center;
+    border-bottom: 1px solid $light_gray;
 
     &:hover {
       color: $light_red;
@@ -39,68 +67,118 @@ body {
 
     &.hidden {
       opacity: 0;
-      height: 0;
     }
   }
 
   input {
     background: $gray;
-    font-size: $font-size;
+    font-size: $alliterator_font_size;
     border: none;
     border-bottom: 1px solid $light_gray;
     display: inline-block;
-    height: 150px;
+    height: 15vw;
     color: $white;
     outline: none;
+    // padding: 3vw;
+    opacity: 1;
     padding: 0;
-    transition: all 1s ease;
-    display: inline-block;
+    transition: all .5s ease;
+    display: block;
+    width: 75vw;
 
     &.hidden {
-      height: 0;
+      opacity: 0;
+      transform: translate(0, 15vw)
+      // height: 0;
+      // padding: 0;
     }
   }
 
   p {
     color: $light_gray;
-    opacity: 1;
-    transition: all 1s ease .5s;
+    height: 0;
+    // padding: 8vw 0 0 0;
     margin: 0;
+    opacity: 1;
+    transition: all .5s ease .5s;
     text-transform: capitalize;
+    height: 15vw;
 
     &.hidden {
       opacity: 0;
     }
   }
+
+  span {
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 }
 
 section {
-  padding: 300px 100px;
   position: relative;
   font-size: 92px;
+  height: 100vh;
+  padding: 0 2vw;
+
+  .background {
+    position: absolute;
+    top: -5vh;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 1;
+    background-image: url("pic.jpg");
+    background-size: cover;
+    background-position: center top;
+    transition: all 1s ease .5s;
+  }
+
+  .wrapper {
+    transition: all .5s ease;
+    opacity: 1;
+    top: 50vh;
+    position: relative;
+
+    &.hidden {
+      opacity: 0;
+      top: 45vh;
+    }
+  }
 
   a {
     text-decoration: none;
     display: inline-block;
-    transition: all 1s ease;
+    transition: transform 1s ease;
+    z-index: 2;
+    position: relative;
 
     &.arrow {
       position: absolute;
       bottom: 10px;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -1vh);
       opacity: 1;
 
       &.hidden {
         opacity: 0;
       }
     }
+
+    &.passage {
+      display: block;
+      transform: translate(0, -50%);
+    }
   }
 
   &:nth-child(odd) {
     background-color: $white;
+    text-shadow: 1px 1px 2px rgba(178,125,125, 1);
+
     a { 
-      color: $light_red;
+      color: $red;
 
       &:hover {
         color: $red;
@@ -110,6 +188,8 @@ section {
 
   &:nth-child(even) {
     background-color: $gray;
+    text-shadow: 1px 1px 2px rgba(51, 51, 51, 1);
+
     a { 
       color: $white;
 
@@ -118,25 +198,4 @@ section {
       }
     }
   }
-}
-
-.wrapper {
-  transition: all .5s ease;
-  opacity: 1;
-  top: 0;
-  position: relative;
-
-  &.hidden {
-    opacity: 0;
-    top: -20px;
-  }
-
-  // &.from-left {
-  //   position: absolute;
-  //   left: auto;
-
-  //   &.hidden {
-  //     left: auto;
-  //   }
-  // }
 }

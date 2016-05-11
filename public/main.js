@@ -5,7 +5,7 @@ function toggleClasses(inputSelector, paragraphSelector, anchorSelector) {
 }
 
 function transitionWords(text) {
-  $("p").html(text)
+  $("p span").html(text)
 }
 
 function chooser(text) {
@@ -30,6 +30,7 @@ function show($element) {
 $(document).ready(function(){
   var $sections = $("section")
   var $firstSection = $sections.first()
+  var $firstPassage = $firstSection.find(".passage")
 
   setTimeout(function(){
     show($firstSection.find(".wrapper"))
@@ -46,15 +47,14 @@ $(document).ready(function(){
 
   $(document).on("scroll", function(event){
     $sections.each(function(index){
-      if($(window).scrollTop() >= $(this).offset().top) {
+      if(index != 0 && $(window).scrollTop() >= $(this).offset().top) {
         show($(this).find(".wrapper"))
         show($(this).find(".arrow"))
-        console.log("past index: " + index)
       }
     })
   })
 
-  $("section:not(:last)").on("click", function(event){
+  $("section:not(:last)").find("a").on("click", function(event){
     event.preventDefault()
     var $nextSection = $(this).closest("section").next()
 
@@ -69,8 +69,15 @@ $(document).ready(function(){
   $("section:last").find("a").on("click", function(event){
     event.preventDefault()
 
+    $firstPassage.text("HAPPY ANNIVERSARY")
+    $firstPassage.css("font-size", "")
+
     $("html, body").animate({
       scrollTop: $firstSection.offset().top + "px"
+    }, function(){
+      $("body").addClass("final")
+      $sections.filter("section:not(:first)").hide()
+      $firstSection.find(".arrow").addClass("hidden")
     })
   })
 })
