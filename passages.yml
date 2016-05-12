@@ -1,64 +1,121 @@
 -
   words: Hi sweetie! This is just a little something
   font_size: 50px
+  image: 
+    url: wedding.jpg
 -
   words: I whipped up to commemorate us
   font_size: 50px
+  image:
+    url: bronx.jpg
+    position: center 40%
 -
   words: It's been an amazing ride
+  font_size: 60px
+  image:
+    url: roller_coaster.jpg
 -
   words: Six years can you believe it?
   font_size: 60px
+  image:
+    url: time.jpg
 -
   words: I can't tell you how happy I am
   font_size: 50px
+  image:
+    url: us.jpg
 -
-  words: Remember the many parks we visited
+  words: Remember the many parks we visited?
   font_size: 50px
+  image:
+    url: park.jpg
 -
-  words: With the little kid... what was his name?
+  words: Or the little kid... what was his name?
   font_size: 50px
+  image:
+    url: white_flower.jpg
 -
   words: Or the flower man when we dated again
   font_size: 50px
+  image:
+    url: flowers.jpg
 -
   words: Remember the first time we heard each other?
   font_size: 50px
+  image:
+    url: mic.jpg
+-
+  words: The first and last time I cooked a good meal LOL
+  font_size: 50px
+  image:
+    url: food.jpg
+-
+  words: Those times at Dave and Busters
+  font_size: 50px
+  image:
+    url: dave_and_busters.jpg
+    position: center 35%
 -
   words: The first time we held each other?
   font_size: 50px
+  image:
+    url: explosion.jpg
 -
-  words: The first time we insulted each other... LOL
+  words: The first time we insulted each other LOL
   font_size: 50px
+  image:
+    url: msn1.jpg
 -
-  words: So many more it's hard to name them all
+  words: There are so many memories it's hard to name them all
   font_size: 50px
+  image:
+    url: coasters.jpg
+    position: center 60%;
 -
   words:
     Sushi, Habachi, Hawaii, The Motel, The Bad Hotel, Breakup, Reunion,
     Bayonne, Boxes, Self Reflection, Zen, Transition... Unity
   font_size: 40px
+  image:
+    url: floor_plan.jpg
 -
   words: I have so many more words
   font_size: 50px
+  image:
+    url: words.jpg
 -
   words: But none can fully describe you
   font_size: 50px
+  image:
+    url: you.jpg
 -
   words: You are my love,<br />My Happiness,<br /> My Reason,<br /> My Everything
   font_size: 50px
+  image:
+    url: universe.jpg
 -
   words: When we met I felt like I had finally arrived
   font_size: 50px
+  image:
+    url: sunset.jpg
 -
   words: Like this is my Destiny
   font_size: 50px
+  image:
+    url: yin_yang2.jpg
 -
   words: And I was right
   font_size: 50px
+  image:
+    url: looking.jpg
 -
   words: I hope you enjoyed reading this
   font_size: 50px
+  image:
+    url: kissing.jpg
 -
   words: Because I enjoyed writing it
   font_size: 50px
+  image:
+    url: me.jpg
+    position: center 70%;

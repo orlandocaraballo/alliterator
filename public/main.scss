@@ -1,31 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Courgette);
+@import url(https://fonts.googleapis.com/css?family=Satisfy);
+
 $gray: #333;
 $light_gray: #ccc;
-$white: #fff;
+$white: #F2FFF1;
 $light_green: #BEFFD8;
 $red: #7F5959;
 $light_red: #B27D7D;
 $alliterator_font_size: 8vw;
+$font_alliterator: 'Raleway', sans-serif;
+$font_sans_serif: 'Courgette', cursive;
+$font_final: 'Satisfy', cursive;
 
 body {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: helvetica, sans-serif;
   position: relative;
   top: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 
-  &.final {
+  // section:first-child {
+  //   .background {
+  //     opacity: 0;
+  //   }
+  // }
+
+  // hack to get around weird final transition
+  &.before-final {
+    section:first-child {
+      a {
+        font-size: 12vw;
+        font-family: $font_final;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &.after-final {
     overflow: hidden;
-
-    a {
-      pointer-events: none;
-      font-size: 12vw;
-    }
-
-    .background {
-      opacity: .5;
-      top: 0;
-    }
   }
 }
 
@@ -34,6 +49,7 @@ body {
   // height: 150%;
   height: 100vh;
   background: $gray;
+  font-family: $font_alliterator;
   font-size: $alliterator_font_size;
   overflow: hidden;
   position: relative;
@@ -73,6 +89,7 @@ body {
 
   input {
     background: $gray;
+    font-family: $font_alliterator;
     font-size: $alliterator_font_size;
     border: none;
     border-bottom: 1px solid $light_gray;
@@ -115,27 +132,38 @@ body {
 }
 
 section {
+  font-family: $font_sans_serif;
   position: relative;
   font-size: 92px;
   height: 100vh;
   padding: 0 2vw;
+  overflow: hidden;
 
   .background {
     position: absolute;
-    top: -5vh;
     left: 0;
     height: 100%;
     width: 100%;
-    opacity: 0;
     z-index: 1;
-    background-image: url("pic.jpg");
     background-size: cover;
     background-position: center top;
-    transition: all 1s ease .5s;
+    transition: all 1s ease .75s;
+    top: 0;
+    transform: scale(1);
+    background-clip: border-box;
+
+    // border: 10px solid $white;
+
+    // -webkit-filter: blur(2px);
+
+    // &.hidden {
+    //   transform: rotate(0deg);
+    //   // top: 5vh;
+    // }
   }
 
   .wrapper {
-    transition: all .5s ease;
+    transition: all .75s ease;
     opacity: 1;
     top: 50vh;
     position: relative;
@@ -149,7 +177,7 @@ section {
   a {
     text-decoration: none;
     display: inline-block;
-    transition: transform 1s ease;
+    transition: transform .75s ease, color .5s ease;
     z-index: 2;
     position: relative;
 
@@ -170,22 +198,53 @@ section {
     }
   }
 
+  // &:not(:first-child) .background {
+  //   transform: rotate(10deg);
+  //   border: 10px solid white;
+  // }
+
   &:nth-child(odd) {
     background-color: $white;
-    text-shadow: 1px 1px 2px rgba(178,125,125, 1);
+    text-shadow: 1px 1px 2px #666;
+
+    .background {
+      opacity: .45;
+      transform: rotate(10deg);
+      border: 15px solid black;
+      outline: 2px solid $light_gray;
+
+      &.hidden {
+        opacity: 0;
+        transform: rotate(0deg);
+        transform: scale(1.5);
+      }
+    }
 
     a { 
       color: $red;
 
       &:hover {
-        color: $red;
+        color: $light_red;
       }
     }
   }
 
   &:nth-child(even) {
     background-color: $gray;
-    text-shadow: 1px 1px 2px rgba(51, 51, 51, 1);
+    text-shadow: 1px 1px 2px $light_gray;
+
+    .background {
+      opacity: .3;
+      transform: rotate(-10deg);
+      border: 10px solid white;
+      outline: 2px solid $gray;
+
+      &.hidden {
+        opacity: 0;
+        transform: rotate(0deg);
+        transform: scale(1.5);
+      }
+    }
 
     a { 
       color: $white;

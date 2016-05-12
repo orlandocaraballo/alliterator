@@ -27,6 +27,12 @@ function show($element) {
   $element.removeClass("hidden")
 }
 
+function showSection($section) {
+  show($section.find(".wrapper"))
+  show($section.find(".arrow"))
+  show($section.find(".background"))
+}
+
 $(document).ready(function(){
   var $sections = $("section")
   var $firstSection = $sections.first()
@@ -48,8 +54,7 @@ $(document).ready(function(){
   $(document).on("scroll", function(event){
     $sections.each(function(index){
       if(index != 0 && $(window).scrollTop() >= $(this).offset().top) {
-        show($(this).find(".wrapper"))
-        show($(this).find(".arrow"))
+        showSection($(this))
       }
     })
   })
@@ -61,23 +66,25 @@ $(document).ready(function(){
     $("html, body").animate({
       scrollTop: $nextSection.offset().top + "px"
     }, function(){
-      show($nextSection.find(".wrapper"))
-      show($nextSection.find(".arrow"))
+      showSection($nextSection)
     })
   })
 
   $("section:last").find("a").on("click", function(event){
     event.preventDefault()
 
-    $firstPassage.text("HAPPY ANNIVERSARY")
+    $firstPassage.text("HAPPY ANNIVERSARY!")
     $firstPassage.css("font-size", "")
+    $("body").addClass("before-final")
+    $firstSection.find(".arrow").addClass("hidden")
 
     $("html, body").animate({
       scrollTop: $firstSection.offset().top + "px"
-    }, function(){
-      $("body").addClass("final")
-      $sections.filter("section:not(:first)").hide()
-      $firstSection.find(".arrow").addClass("hidden")
+    }, 15000, function(){
+      // $sections.filter("section:not(:first)").hide()
+      $firstSection.find(".background").removeClass("hidden")
+      $("body").addClass("after-final")
+      // $firstSection.find(".arrow").addClass("hidden")
     })
   })
 })

@@ -1,22 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Courgette);
+@import url(https://fonts.googleapis.com/css?family=Satisfy);
 body {
   margin: 0;
   padding: 0;
   text-align: center;
-  font-family: helvetica, sans-serif;
   position: relative;
-  top: 0; }
-  body.final {
+  top: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth; }
+  body.before-final section:first-child a {
+    font-size: 12vw;
+    font-family: "Satisfy", cursive;
+    pointer-events: none; }
+  body.after-final {
     overflow: hidden; }
-    body.final a {
-      pointer-events: none;
-      font-size: 12vw; }
-    body.final .background {
-      opacity: .5;
-      top: 0; }
 
 .alliterator {
   height: 100vh;
   background: #333333;
+  font-family: "Raleway", sans-serif;
   font-size: 8vw;
   overflow: hidden;
   position: relative; }
@@ -47,12 +50,13 @@ body {
       pointer-events: none; }
   .alliterator input {
     background: #333333;
+    font-family: "Raleway", sans-serif;
     font-size: 8vw;
     border: none;
     border-bottom: 1px solid #cccccc;
     display: inline-block;
     height: 15vw;
-    color: white;
+    color: #f2fff1;
     outline: none;
     opacity: 1;
     padding: 0;
@@ -79,24 +83,26 @@ body {
     transform: translate(0, -50%); }
 
 section {
+  font-family: "Courgette", cursive;
   position: relative;
   font-size: 92px;
   height: 100vh;
-  padding: 0 2vw; }
+  padding: 0 2vw;
+  overflow: hidden; }
   section .background {
     position: absolute;
-    top: -5vh;
     left: 0;
     height: 100%;
     width: 100%;
-    opacity: 0;
     z-index: 1;
-    background-image: url("pic.jpg");
     background-size: cover;
     background-position: center top;
-    transition: all 1s ease .5s; }
+    transition: all 1s ease .75s;
+    top: 0;
+    transform: scale(1);
+    background-clip: border-box; }
   section .wrapper {
-    transition: all .5s ease;
+    transition: all .75s ease;
     opacity: 1;
     top: 50vh;
     position: relative; }
@@ -106,7 +112,7 @@ section {
   section a {
     text-decoration: none;
     display: inline-block;
-    transition: transform 1s ease;
+    transition: transform .75s ease, color .5s ease;
     z-index: 2;
     position: relative; }
     section a.arrow {
@@ -120,16 +126,34 @@ section {
       display: block;
       transform: translate(0, -50%); }
   section:nth-child(odd) {
-    background-color: white;
-    text-shadow: 1px 1px 2px #b27d7d; }
+    background-color: #f2fff1;
+    text-shadow: 1px 1px 2px #666; }
+    section:nth-child(odd) .background {
+      opacity: .45;
+      transform: rotate(10deg);
+      border: 15px solid black;
+      outline: 2px solid #cccccc; }
+      section:nth-child(odd) .background.hidden {
+        opacity: 0;
+        transform: rotate(0deg);
+        transform: scale(1.5); }
     section:nth-child(odd) a {
       color: #7f5959; }
       section:nth-child(odd) a:hover {
-        color: #7f5959; }
+        color: #b27d7d; }
   section:nth-child(even) {
     background-color: #333333;
-    text-shadow: 1px 1px 2px #333333; }
+    text-shadow: 1px 1px 2px #cccccc; }
+    section:nth-child(even) .background {
+      opacity: .3;
+      transform: rotate(-10deg);
+      border: 10px solid white;
+      outline: 2px solid #333333; }
+      section:nth-child(even) .background.hidden {
+        opacity: 0;
+        transform: rotate(0deg);
+        transform: scale(1.5); }
     section:nth-child(even) a {
-      color: white; }
+      color: #f2fff1; }
       section:nth-child(even) a:hover {
         color: #cccccc; }

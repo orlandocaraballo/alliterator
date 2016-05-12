@@ -1,6 +1,9 @@
-<% @passages.each do |passage| %>
+<% @passages.each_with_index do |passage, index| %>
   <section>
-    <div class="background"></div>
+    <% if passage['image'] %>
+      <div class="background hidden" style="background-image: url('<%= passage['image']['url'] %>'); background-position: <%= passage['image']['position'] %>; height: <%= passage['image']['height']%>">
+      </div>
+    <% end %>
 
     <div class="wrapper hidden">  
       <a href="#" class="next passage" style="font-size: <%= passage['font_size']%>">
