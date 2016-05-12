@@ -20,13 +20,6 @@ body {
   position: relative;
   top: 0;
   overflow-x: hidden;
-  scroll-behavior: smooth;
-
-  // section:first-child {
-  //   .background {
-  //     opacity: 0;
-  //   }
-  // }
 
   // hack to get around weird final transition
   &.before-final {
@@ -138,6 +131,7 @@ section {
   height: 100vh;
   padding: 0 2vw;
   overflow: hidden;
+  transition: transform 0.6s ease-in-out;
 
   .background {
     position: absolute;
@@ -151,26 +145,18 @@ section {
     top: 0;
     transform: scale(1);
     background-clip: border-box;
-
-    // border: 10px solid $white;
-
-    // -webkit-filter: blur(2px);
-
-    // &.hidden {
-    //   transform: rotate(0deg);
-    //   // top: 5vh;
-    // }
   }
 
   .wrapper {
     transition: all .75s ease;
     opacity: 1;
-    top: 50vh;
+    transform: translateY(50vh);
     position: relative;
+    z-index: 1;
 
     &.hidden {
       opacity: 0;
-      top: 45vh;
+      transform: translateY(45vh);
     }
   }
 
@@ -178,7 +164,7 @@ section {
     text-decoration: none;
     display: inline-block;
     transition: transform .75s ease, color .5s ease;
-    z-index: 2;
+    z-index: 3;
     position: relative;
 
     &.arrow {
@@ -187,8 +173,10 @@ section {
       transform: translate(-50%, -1vh);
       opacity: 1;
 
+
       &.hidden {
         opacity: 0;
+        transform: translate(-50%, 5vh);
       }
     }
 
@@ -196,12 +184,7 @@ section {
       display: block;
       transform: translate(0, -50%);
     }
-  }
-
-  // &:not(:first-child) .background {
-  //   transform: rotate(10deg);
-  //   border: 10px solid white;
-  // }
+  } 
 
   &:nth-child(odd) {
     background-color: $white;

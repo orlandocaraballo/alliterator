@@ -1,17 +1,17 @@
 <% @passages.each_with_index do |passage, index| %>
-  <section>
+  <section id="section-<%= index %>">
     <% if passage['image'] %>
       <div class="background hidden" style="background-image: url('<%= passage['image']['url'] %>'); background-position: <%= passage['image']['position'] %>; height: <%= passage['image']['height']%>">
       </div>
     <% end %>
 
     <div class="wrapper hidden">  
-      <a href="#" class="next passage" style="font-size: <%= passage['font_size']%>">
+      <a href="#section-<%= index + 1 %>" class="next passage" style="font-size: <%= passage['font_size']%>">
         <%= passage["words"] %>
       </a>
     </div>
 
-    <a href="#" class="arrow next hidden beckon">
+    <a href="#section-<%= index + 1 %>" class="arrow next hidden beckon">
       <i class="fa <%= choose_icon(passage) %>" aria-hidden="true"></i>
     </a>
   </section>

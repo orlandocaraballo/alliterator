@@ -59,16 +59,16 @@ $(document).ready(function(){
     })
   })
 
-  $("section:not(:last)").find("a").on("click", function(event){
-    event.preventDefault()
-    var $nextSection = $(this).closest("section").next()
+  // $("section:not(:last)").find("a").on("click", function(event){
+  //   event.preventDefault()
+  //   var $nextSection = $(this).closest("section").next()
 
-    $("html, body").animate({
-      scrollTop: $nextSection.offset().top + "px"
-    }, function(){
-      showSection($nextSection)
-    })
-  })
+  //   $("html, body").animate({
+  //     scrollTop: $nextSection.offset().top + "px"
+  //   }, 500, function(){
+  //     showSection($nextSection)
+  //   })
+  // })
 
   $("section:last").find("a").on("click", function(event){
     event.preventDefault()
