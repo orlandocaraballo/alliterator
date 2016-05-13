@@ -59,16 +59,18 @@ $(document).ready(function(){
     })
   })
 
-  // $("section:not(:last)").find("a").on("click", function(event){
-  //   event.preventDefault()
-  //   var $nextSection = $(this).closest("section").next()
+  $("section:not(:last)").find("a").on("click", function(event){
+    event.preventDefault()
+    var $nextSection = $(this).closest("section").next()
 
-  //   $("html, body").animate({
-  //     scrollTop: $nextSection.offset().top + "px"
-  //   }, 500, function(){
-  //     showSection($nextSection)
-  //   })
-  // })
+    // console.log($nextSection.offset().top + "px"))
+
+    $("html, body").animate({
+      scrollTop: $nextSection.offset().top + "px"
+    }, 500, function(){
+      showSection($nextSection)
+    })
+  })
 
   $("section:last").find("a").on("click", function(event){
     event.preventDefault()
@@ -79,8 +81,8 @@ $(document).ready(function(){
     $firstSection.find(".arrow").addClass("hidden")
 
     $("html, body").animate({
-      scrollTop: $firstSection.offset().top + "px"
-    }, 15000, function(){
+      scrollTop: 0
+    }, 5000, function(){
       // $sections.filter("section:not(:first)").hide()
       $firstSection.find(".background").removeClass("hidden")
       $("body").addClass("after-final")

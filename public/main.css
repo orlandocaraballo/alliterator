@@ -7,13 +7,14 @@ body {
   text-align: center;
   position: relative;
   top: 0;
+  background-color: #333333;
+  transition: background-color 1s ease;
   overflow-x: hidden; }
   body.before-final section:first-child a {
     font-size: 12vw;
-    font-family: "Satisfy", cursive;
-    pointer-events: none; }
+    font-family: "Satisfy", cursive; }
   body.after-final {
-    overflow: hidden; }
+    background-color: #CCFFD4; }
 
 .alliterator {
   height: 100vh;
@@ -35,7 +36,6 @@ body {
     opacity: 1;
     transition: all .5s ease .5s;
     position: absolute;
-    top: 0;
     left: 50%;
     transform: translate(-50%);
     height: 15vw;
@@ -87,10 +87,12 @@ section {
   font-size: 92px;
   height: 100vh;
   padding: 0 2vw;
-  overflow: hidden;
-  transition: transform 0.6s ease-in-out; }
+  transition: transform 0.6s ease-in-out;
+  overflow: visible;
+  z-index: 10000; }
   section .background {
     position: absolute;
+    top: 0;
     left: 0;
     height: 100%;
     width: 100%;
@@ -98,7 +100,6 @@ section {
     background-size: cover;
     background-position: center top;
     transition: all 1s ease .75s;
-    top: 0;
     transform: scale(1);
     background-clip: border-box; }
   section .wrapper {
@@ -128,29 +129,27 @@ section {
       display: block;
       transform: translate(0, -50%); }
   section:nth-child(odd) {
-    background-color: #f2fff1;
-    text-shadow: 1px 1px 2px #666; }
+    text-shadow: 3px 3px 3px black; }
     section:nth-child(odd) .background {
-      opacity: .45;
+      opacity: 1;
       transform: rotate(10deg);
-      border: 15px solid black;
-      outline: 2px solid #cccccc; }
+      border: 10px solid white;
+      outline: 1px solid #333333; }
       section:nth-child(odd) .background.hidden {
         opacity: 0;
         transform: rotate(0deg);
         transform: scale(1.5); }
     section:nth-child(odd) a {
-      color: #7f5959; }
+      color: #f2fff1; }
       section:nth-child(odd) a:hover {
-        color: #b27d7d; }
+        color: #cccccc; }
   section:nth-child(even) {
-    background-color: #333333;
-    text-shadow: 1px 1px 2px #cccccc; }
+    text-shadow: 3px 3px 3px black; }
     section:nth-child(even) .background {
-      opacity: .3;
+      opacity: 1;
       transform: rotate(-10deg);
       border: 10px solid white;
-      outline: 2px solid #333333; }
+      outline: 1px solid #333333; }
       section:nth-child(even) .background.hidden {
         opacity: 0;
         transform: rotate(0deg);

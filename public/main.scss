@@ -19,6 +19,8 @@ body {
   text-align: center;
   position: relative;
   top: 0;
+  background-color: $gray;
+  transition: background-color 1s ease;
   overflow-x: hidden;
 
   // hack to get around weird final transition
@@ -27,13 +29,13 @@ body {
       a {
         font-size: 12vw;
         font-family: $font_final;
-        pointer-events: none;
+        // pointer-events: none;
       }
     }
   }
 
   &.after-final {
-    overflow: hidden;
+    background-color: #CCFFD4;
   }
 }
 
@@ -62,7 +64,7 @@ body {
     opacity: 1;
     transition: all .5s ease .5s;
     position: absolute;
-    top: 0;
+    // top: 0;
     left: 50%;
     transform: translate(-50%);
     height: 15vw;
@@ -130,11 +132,15 @@ section {
   font-size: 92px;
   height: 100vh;
   padding: 0 2vw;
-  overflow: hidden;
   transition: transform 0.6s ease-in-out;
+  // overflow-x: hidden;
+  // overflow-y: visible;
+  overflow: visible;
+  z-index: 10000;
 
   .background {
     position: absolute;
+    top: 0;
     left: 0;
     height: 100%;
     width: 100%;
@@ -142,7 +148,7 @@ section {
     background-size: cover;
     background-position: center top;
     transition: all 1s ease .75s;
-    top: 0;
+    // top: 0;
     transform: scale(1);
     background-clip: border-box;
   }
@@ -187,14 +193,19 @@ section {
   } 
 
   &:nth-child(odd) {
-    background-color: $white;
-    text-shadow: 1px 1px 2px #666;
+    // background-color: $white;
+    // text-shadow: 1px 1px 2px #666;
+    // background-color: $gray;
+    text-shadow: 3px 3px 3px black;
 
     .background {
-      opacity: .45;
+      // opacity: .45;
+      opacity: 1;
       transform: rotate(10deg);
-      border: 15px solid black;
-      outline: 2px solid $light_gray;
+      // border: 15px solid black;
+      // outline: 2px solid $light_gray;
+      border: 10px solid white;
+      outline: 1px solid $gray;
 
       &.hidden {
         opacity: 0;
@@ -204,23 +215,26 @@ section {
     }
 
     a { 
-      color: $red;
+      // color: $red;
+      color: $white;
 
       &:hover {
-        color: $light_red;
+        // color: $light_red;
+        color: $light_gray;
       }
     }
   }
 
   &:nth-child(even) {
-    background-color: $gray;
-    text-shadow: 1px 1px 2px $light_gray;
+    // background-color: $gray;
+    text-shadow: 3px 3px 3px black;
 
     .background {
-      opacity: .3;
+      // opacity: .3;
+      opacity: 1;
       transform: rotate(-10deg);
       border: 10px solid white;
-      outline: 2px solid $gray;
+      outline: 1px solid $gray;
 
       &.hidden {
         opacity: 0;

@@ -1,7 +1,7 @@
 <% @passages.each_with_index do |passage, index| %>
   <section id="section-<%= index %>">
     <% if passage['image'] %>
-      <div class="background hidden" style="background-image: url('<%= passage['image']['url'] %>'); background-position: <%= passage['image']['position'] %>; height: <%= passage['image']['height']%>">
+      <div class="background hidden" style="background-image: url('<%= passage['image']['url'] %>'); background-position: <%= passage['image']['position'] %>">
       </div>
     <% end %>
 
