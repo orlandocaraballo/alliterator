@@ -83,10 +83,8 @@ $(document).ready(function(){
     $("html, body").animate({
       scrollTop: 0
     }, 5000, function(){
-      // $sections.filter("section:not(:first)").hide()
       $firstSection.find(".background").removeClass("hidden")
       $("body").addClass("after-final")
-      // $firstSection.find(".arrow").addClass("hidden")
     })
   })
 })
