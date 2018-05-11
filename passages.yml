@@ -15,7 +15,7 @@
   image:
     url: roller_coaster.jpg
 -
-  words: Six years can you believe it?
+  words: 11 years can you believe it?
   font_size: 60px
   image:
     url: time.jpg
@@ -117,5 +117,5 @@
   words: Because I enjoyed writing it
   font_size: 50px
   image:
-    url: me.jpg
+    url: us-now.jpg
     position: center 70%;
