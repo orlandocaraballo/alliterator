@@ -66,6 +66,17 @@
   image:
     url: msn1.jpg
 -
+  words: When we held hands off the side of a mountain
+  font_size: 50px
+  image:
+    url: yosemite.jpg
+-
+  words: Or the time we went to london
+  font_size: 50px
+  image:
+    url: london.jpg
+    position: center 60%
+-
   words: There are so many memories it's hard to name them all
   font_size: 50px
   image:
